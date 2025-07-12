@@ -2,17 +2,19 @@ import React, { useEffect, useState } from 'react'
 import innerStyles from './innerpages.module.css'
 import axios from 'axios'
 
-const OrderList = () => {
+const AmazonSelfShipList = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/orderlist')
+        axios.get('http://localhost:5000/amezonselfship')
             .then((res) => setData(res.data))
             .catch(err => console.log(err))
     }, [])
     return (
         <>
+
             <section className='py-5'>
+                <h2 className='text-center'>Amazon Self Ship List</h2>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-12'>
@@ -23,6 +25,7 @@ const OrderList = () => {
                                             <th>Date</th>
                                             <th>Customer Name</th>
                                             <th>Location</th>
+                                            <th>Phone Number</th>
                                             <th>OrderID</th>
                                             <th>AWB</th>
                                             <th>Products</th>
@@ -40,8 +43,9 @@ const OrderList = () => {
                                                         <td>{new Date(prod.date).toLocaleDateString('en-CA')}</td>
                                                         <td>{prod.customerName}</td>
                                                         <td>{prod.location}</td>
+                                                        <td>{prod.phoneNumber}</td>
                                                         <td>{prod.orderID}</td>
-                                                        <td>{prod.AWB}</td>
+                                                        <td>{prod.awb}</td>
                                                         <td>{prod.products}</td>
                                                         <td>{prod.paymentMode}</td>
                                                         <td>{prod.amount} Rs/-</td>
@@ -63,4 +67,4 @@ const OrderList = () => {
     )
 }
 
-export default OrderList
+export default AmazonSelfShipList

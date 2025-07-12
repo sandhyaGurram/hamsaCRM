@@ -17,8 +17,8 @@ const AdminDashboard = () => {
                 </div>
             </section>
 
-            <section className='py-5'>
-                <div className='container'>
+            <section className='py-1'>
+                <div className='container-fluid'>
                     <div className='row'>
                         <div className='col-md-3'>
                             <AdminSidebar />

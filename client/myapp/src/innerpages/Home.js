@@ -13,6 +13,7 @@ const Home = () => {
     return (
         <>
             <section className='py-5'>
+                <h2 className='text-center'>Products List</h2>
                 <div className='container'>
                     <div className='row'>
                         <div className='col-md-12'>
