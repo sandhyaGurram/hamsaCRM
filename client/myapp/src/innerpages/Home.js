@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import innerStyles from './innerpages.module.css'
 import axios from 'axios'
+import $ from 'jquery';
+
+import 'datatables.net-dt/css/dataTables.dataTables.css';
+import 'datatables.net';
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -10,6 +14,13 @@ const Home = () => {
             .then((res) => setData(res.data))
             .catch(err => console.log(err))
     }, [])
+
+    useEffect(() => {
+        if (data.length > 0) {
+            $('#myTable').DataTable();
+        }
+    }, [data]);
+
     return (
         <>
             <section className='py-5'>
@@ -18,7 +29,7 @@ const Home = () => {
                     <div className='row'>
                         <div className='col-md-12'>
                             <div className='table-responsive'>
-                                <table className='table table-bordered'>
+                                <table id="myTable" className='table table-bordered display'>
                                     <thead>
                                         <tr>
                                             <th>Title</th>
