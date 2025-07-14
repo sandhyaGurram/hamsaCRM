@@ -11,7 +11,10 @@ const OrderList = () => {
 
     useEffect(() => {
         axios.get('https://hamsa-backend-4rpv.onrender.com/orderlist')
-            .then((res) => setData(res.data))
+            .then(res => {
+                console.log("API Data:", res.data);
+                setData(res.data);
+            })
             .catch(err => console.log(err))
     }, [])
     useEffect(() => {
@@ -44,7 +47,7 @@ const OrderList = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            data.map((prod) => {
+                                            Array.isArray(data) && data.map((prod) => {
                                                 return (
                                                     <tr>
                                                         <td>{new Date(prod.date).toLocaleDateString('en-CA')}</td>

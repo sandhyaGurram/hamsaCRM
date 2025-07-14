@@ -10,7 +10,10 @@ const AmazonSelfShipList = () => {
 
     useEffect(() => {
         axios.get('https://hamsa-backend-4rpv.onrender.com/amezonselfship')
-            .then((res) => setData(res.data))
+            .then(res => {
+                console.log("API Data:", res.data);
+                setData(res.data);
+            })
             .catch(err => console.log(err))
     }, []);
 
@@ -44,7 +47,7 @@ const AmazonSelfShipList = () => {
                                 </thead>
                                 <tbody>
                                     {
-                                        data.map((prod, index) => (
+                                        Array.isArray(data) && data.map((prod, index) => (
                                             <tr key={index}>
                                                 <td>{new Date(prod.date).toLocaleDateString('en-CA')}</td>
                                                 <td>{prod.customerName}</td>

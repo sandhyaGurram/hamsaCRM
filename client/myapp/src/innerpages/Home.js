@@ -11,7 +11,10 @@ const Home = () => {
 
     useEffect(() => {
         axios.get('https://hamsa-backend-4rpv.onrender.com/product')
-            .then((res) => setData(res.data))
+            .then(res => {
+                console.log("API Data:", res.data);
+                setData(res.data);
+            })
             .catch(err => console.log(err))
     }, [])
 
@@ -39,7 +42,7 @@ const Home = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            data.map((prod) => {
+                                            Array.isArray(data) && data.map((prod) => {
                                                 return (
                                                     <tr>
                                                         <td>{prod.name}</td>

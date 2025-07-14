@@ -11,7 +11,10 @@ const FBAOrder = () => {
 
     useEffect(() => {
         axios.get('https://hamsa-backend-4rpv.onrender.com/fbalist')
-            .then((res) => setData(res.data))
+            .then(res => {
+                console.log("API Data:", res.data);
+                setData(res.data);
+            })
             .catch(err => console.log(err))
     }, [])
 
@@ -44,7 +47,7 @@ const FBAOrder = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            data.map((prod) => {
+                                            Array.isArray(data) && data.map((prod) => {
                                                 return (
                                                     <tr>
                                                         <td>{new Date(prod.date).toLocaleDateString('en-CA')}</td>
