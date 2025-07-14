@@ -9,7 +9,7 @@ const AmazonSelfShipList = () => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/amezonselfship')
+        axios.get('https://hamsa-backend-4rpv.onrender.com/amezonselfship')
             .then((res) => setData(res.data))
             .catch(err => console.log(err))
     }, []);

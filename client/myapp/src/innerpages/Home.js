@@ -10,7 +10,7 @@ const Home = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/product')
+        axios.get('https://hamsa-backend-4rpv.onrender.com/product')
             .then((res) => setData(res.data))
             .catch(err => console.log(err))
     }, [])

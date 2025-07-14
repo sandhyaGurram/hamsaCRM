@@ -10,7 +10,7 @@ const OrderList = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/orderlist')
+        axios.get('https://hamsa-backend-4rpv.onrender.com/orderlist')
             .then((res) => setData(res.data))
             .catch(err => console.log(err))
     }, [])

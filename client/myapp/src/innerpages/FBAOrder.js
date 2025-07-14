@@ -10,7 +10,7 @@ const FBAOrder = () => {
     const [data, setData] = useState([])
 
     useEffect(() => {
-        axios.get('http://localhost:5000/fbalist')
+        axios.get('https://hamsa-backend-4rpv.onrender.com/fbalist')
             .then((res) => setData(res.data))
             .catch(err => console.log(err))
     }, [])

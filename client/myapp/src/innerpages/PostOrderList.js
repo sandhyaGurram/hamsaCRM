@@ -16,7 +16,7 @@ const PostOrderList = () => {
 
     const orderListData = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/orderlist', { date, customerName, location, orderID, AWB, products, paymentMode, amount, status })
+        axios.post('https://hamsa-backend-4rpv.onrender.com/orderlist', { date, customerName, location, orderID, AWB, products, paymentMode, amount, status })
             .then((res) => {
                 alert("data added success")
                 setdate('')
