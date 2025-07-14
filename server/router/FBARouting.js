@@ -1,6 +1,6 @@
 let express = require('express')
 
-require('../db')
+
 
 let FBAOrder = require('../modal/FBAModal')
 let FBARouting = express.Router()

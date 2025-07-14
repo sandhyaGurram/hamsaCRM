@@ -1,6 +1,6 @@
 let express = require('express')
 
-require('../db')
+
 
 let AmezonSelfShip = require('../modal/amezonSelfShipModal')
 let AmezonSelfShipRouting = express.Router()

@@ -1,6 +1,6 @@
 let express = require('express')
 
-require('../db')
+
 
 let Product = require('../modal/productmodal')
 let ProductRouting = express.Router()

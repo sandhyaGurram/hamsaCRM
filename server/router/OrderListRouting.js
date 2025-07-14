@@ -1,6 +1,6 @@
 let express = require('express')
 
-require('../db')
+
 
 let ProductOrder = require('../modal/OrderListModal')
 let OrderListRouting = express.Router()
