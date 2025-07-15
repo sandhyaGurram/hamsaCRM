@@ -1,4 +1,4 @@
-Sidebar.css — overrides + styling
+/* Sidebar.css — overrides + styling
 .bm-burger-button {
   position: fixed;
   width: 25px;
@@ -12,13 +12,13 @@ Sidebar.css — overrides + styling
 }
 
 .bm-menu {
-  background: #373a47;
+
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
 .menu-item {
-  display: block;
+
   color: white;
   padding: 10px 0;
   text-decoration: none;
@@ -26,4 +26,4 @@ Sidebar.css — overrides + styling
 
 .menu-item:hover {
   background-color: #4c4f5a;
-}
+} */
