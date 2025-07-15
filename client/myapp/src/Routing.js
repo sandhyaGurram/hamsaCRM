@@ -7,6 +7,7 @@ import FBAOrder from './innerpages/FBAOrder'
 import PostOrderList from './innerpages/PostOrderList'
 import PostEBAorders from './innerpages/PostEBAorders'
 import AmazonSelfShipList from './innerpages/AmazonSelfShipList'
+import ImageUpload from './innerpages/ImageUpload'
 
 const Routing = () => {
     return (
@@ -21,6 +22,7 @@ const Routing = () => {
                     <Route path='postfbaorderlist' element={<PostEBAorders />} />
                     <Route path='postorderlist' element={<PostOrderList />} />
                     <Route path='amezonselfship' element={<AmazonSelfShipList />} />
+                    <Route path='imageupload' element={<ImageUpload />} />
 
 
                 </Route>

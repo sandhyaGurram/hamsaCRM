@@ -29,7 +29,7 @@ const AdminSidebar = () => {
                     <NavLink to='amezonselfship'> Amezon Selfship</NavLink>
                 </li>
                 <li>
-                    <NavLink to=''> Meeshow</NavLink>
+                    <NavLink to='imageupload'> Image Upload</NavLink>
                 </li>
                 <li>
                     <NavLink to=''> FlipKart</NavLink>
