@@ -50,7 +50,7 @@ const PostOrderList = () => {
                 <div className='container'>
                     <div className='row'>
 
-                        <div className='col-md-8'>
+                        <div className='col-md-6 m-auto'>
                             <form className={innerStyles.form} onSubmit={orderListData}>
                                 <div className=''>
                                     <input type='date' name='date' placeholder='date' className='form-control mb-3' value={date} onChange={(e) => setdate(e.target.value)} />

@@ -9,9 +9,9 @@ const AdminDashboard = () => {
     return (
         <>
             <section className={innerStyles.breadc}>
-                <div className='container'>
+                <div className='container-fluid'>
                     <div className='row'>
-                        <div className='col-md-12'>
+                        <div className=''>
                             <h4>Admin Dashboard</h4>
                         </div>
                     </div>
@@ -21,10 +21,10 @@ const AdminDashboard = () => {
             <section className='py-1'>
                 <div className='container-fluid'>
                     <div className='row'>
-                        <div className='col-md-3'>
+                        <div className=''>
                             <AdminSidebar />
                         </div>
-                        <div className='col-md-9'>
+                        <div className=''>
 
                             <Outlet />
                         </div>

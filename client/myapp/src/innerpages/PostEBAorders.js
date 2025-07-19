@@ -47,10 +47,10 @@ const PostEBAorders = () => {
 
             <section className='py-1'>
                 <h2 className='text-center'>Post FBA Order List</h2>
-                <div className='container'>
-                    <div className='row'>
+                <div className='container-fluid'>
+                    
 
-                        <div className='col-md-8'>
+                        <div className='col-md-6 m-auto'>
                             <form className={innerStyles.form} onSubmit={FBAorderListData}>
                                 <div className=''>
                                     <input type='date' name='date' placeholder='date' className='form-control mb-3' value={date} onChange={(e) => setdate(e.target.value)} />
@@ -104,7 +104,7 @@ const PostEBAorders = () => {
                                 </div>
                             </form>
                         </div>
-                    </div>
+                    
                 </div>
             </section>
         </>

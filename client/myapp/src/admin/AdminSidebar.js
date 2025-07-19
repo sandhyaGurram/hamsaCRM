@@ -1,44 +1,47 @@
 import React from 'react'
 import innerStyles from '../innerpages/innerpages.module.css'
-
+import './Sidebar.css'
 import { NavLink } from 'react-router-dom'
 
 
-const AdminSidebar = () => {
+const AdminSidebar = ({show, setShowNav}) => {
+    const handleNavClick=()=>{
+        setShowNav(false)
+    }
     return (
 
-        <div className={innerStyles.sidebar}>
+        <div className={show ? 'sidenav active':'sidenav'}>
             <h4>Sidebar</h4>
             <ul>
                 <li>
-                    <NavLink to='orderlist'>Order List</NavLink>
+                    <NavLink to='orderlist' onClick={handleNavClick}>Order List</NavLink>
                 </li>
                 <li>
-                    <NavLink to=''> Product List</NavLink>
+                    <NavLink to='fbaorder' onClick={handleNavClick}> Product List</NavLink>
                 </li>
                 <li>
-                    <NavLink to='postorderlist'>Post Product List</NavLink>
+                    <NavLink to='postorderlist' onClick={handleNavClick}>Post Product List</NavLink>
                 </li>
                 <li>
-                    <NavLink to='fbaorder'> FBA </NavLink>
+                    <NavLink to='fbaorder' onClick={handleNavClick}> FBA </NavLink>
                 </li>
                 <li>
-                    <NavLink to='postfbaorderlist'> Post FBA Orders</NavLink>
+                    <NavLink to='postfbaorderlist' onClick={handleNavClick}> Post FBA Orders</NavLink>
                 </li>
                 <li>
-                    <NavLink to='amezonselfship'> Amezon Selfship</NavLink>
+                    <NavLink to='amezonselfship' onClick={handleNavClick}> Amezon Selfship</NavLink>
                 </li>
                 <li>
-                    <NavLink to='imageupload'> Image Upload</NavLink>
+                    <NavLink to='imageupload' onClick={handleNavClick}> Image Upload</NavLink>
                 </li>
                 <li>
-                    <NavLink to=''> FlipKart</NavLink>
+                    <NavLink to='fliplist' onClick={handleNavClick}> FlipKart</NavLink>
                 </li>
                 <li>
-                    <NavLink to=''> Myntra</NavLink>
+                    <NavLink to='myntralist' onClick={handleNavClick}> Myntra</NavLink>
                 </li>
                 <li>
-                    <NavLink to=''> Website Orders</NavLink>
+                    <NavLink to='weborderlist' onClick={handleNavClick}> Website Orders</NavLink>
                 </li>
 
             </ul>

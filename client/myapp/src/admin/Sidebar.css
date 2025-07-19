@@ -27,3 +27,63 @@
 .menu-item:hover {
   background-color: #4c4f5a;
 } */
+
+
+body{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+}
+header{
+  background: transparent;
+  color: #000;
+  height: 100%;
+  padding: 10px 30px;
+}
+.sidenav{
+  width: 240px;
+position: absolute;
+background: black;
+height: 100vh;
+padding: 0 30px;
+transition: all;
+left: -100%;
+z-index: 100;
+}
+
+.sidenav.active{
+  left: 0;
+}
+ul{
+  padding: 0;
+}
+
+ul li{
+  list-style-type: none;
+}
+ul li a{
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+ul li a:hover, ul li a.active{
+  background-color: brown;
+}
+
+.logo{
+  width: 50px;
+}
+
+header svg{
+  font-size: 40px;
+}
+
+@media screen {
+  
+}
