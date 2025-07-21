@@ -31,6 +31,7 @@ let OrderListRouting = require('./router/OrderListRouting');
 let FBARouting = require('./router/FBARouting');
 let AmezonSelfShipRouting = require('./router/AmezonSelfShipRouting');
 let MyntraOrderRouting = require('./router/MyntraRouting')
+let FlipkartRouting = require('./router/FlipkartRouting')
 let app = express();
 
 // Middleware
@@ -43,6 +44,7 @@ app.use('/', productRouting);
 app.use('/', FBARouting);
 app.use('/', AmezonSelfShipRouting);
 app.use('/', MyntraOrderRouting)
+app.use('/', FlipkartRouting)
 
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
