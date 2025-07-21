@@ -4,13 +4,13 @@ import './Sidebar.css'
 import { NavLink } from 'react-router-dom'
 
 
-const AdminSidebar = ({show, setShowNav}) => {
-    const handleNavClick=()=>{
+const AdminSidebar = ({ show, setShowNav }) => {
+    const handleNavClick = () => {
         setShowNav(false)
     }
     return (
 
-        <div className={show ? 'sidenav active':'sidenav'}>
+        <div className={show ? 'sidenav active' : 'sidenav'}>
             <h4>Sidebar</h4>
             <ul>
                 <li>
@@ -38,7 +38,7 @@ const AdminSidebar = ({show, setShowNav}) => {
                     <NavLink to='fliplist' onClick={handleNavClick}> FlipKart</NavLink>
                 </li>
                 <li>
-                    <NavLink to='myntralist' onClick={handleNavClick}> Myntra</NavLink>
+                    <NavLink to='myntraorderlist' onClick={handleNavClick}> Myntra</NavLink>
                 </li>
                 <li>
                     <NavLink to='weborderlist' onClick={handleNavClick}> Website Orders</NavLink>

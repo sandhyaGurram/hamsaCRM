@@ -11,6 +11,7 @@ import ImageUpload from './innerpages/ImageUpload'
 import WebOrderList from './innerpages/WebOrderList'
 import MyntraList from './innerpages/MyntraList'
 import FlipList from './innerpages/FlipList'
+import MyntraOrderList from './innerpages/MyntraOrderList'
 
 const Routing = () => {
     return (
@@ -29,6 +30,7 @@ const Routing = () => {
                     <Route path='weborderlist' element={<WebOrderList />} />
                     <Route path='myntralist' element={<MyntraList />} />
                     <Route path='fliplist' element={<FlipList />} />
+                    <Route path='myntraorderlist' element={<MyntraOrderList />} />
 
 
                 </Route>
