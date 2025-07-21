@@ -45,4 +45,4 @@ const FlipkartSchema = new mongoose.Schema({
     }
 }, { timestamps: true });
 
-module.exports = mongoose.model('Orders', FlipkartSchema);
+module.exports = mongoose.model('FlipkartOrders', FlipkartSchema);
