@@ -4,6 +4,7 @@ import $ from 'jquery';
 import 'datatables.net-dt/css/dataTables.dataTables.css';
 import 'datatables.net';
 import axios from 'axios';
+import '../admin/Sidebar.css'
 
 const FlipList = () => {
   const [data, setData] = useState([]);
@@ -23,7 +24,7 @@ const FlipList = () => {
     }
   }, [data]);
   return (
-    <section className='py-5'>
+    <section className='mobile py-5'>
       <h2 className='text-center'>Flipkart Order List</h2>
       <div className='container'>
         <div className='row'>
@@ -35,13 +36,14 @@ const FlipList = () => {
                     <th>Date</th>
                     <th>Customer Name</th>
                     <th>Location</th>
-                    <th>packetId</th>
+                    <th>Order Id</th>
 
                     <th>AWB</th>
                     <th>Products</th>
                     <th>PaymentMode</th>
                     <th>Amount</th>
                     <th>Status</th>
+                    <th>Delivery date</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -51,13 +53,14 @@ const FlipList = () => {
                         <td>{new Date(prod.date).toLocaleDateString('en-CA')}</td>
                         <td>{prod.customerName}</td>
                         <td>{prod.location}</td>
-                        <td>{prod.packetId}</td>
+                        <td>{prod.orderId}</td>
 
                         <td>{prod.awb}</td>
                         <td>{prod.products}</td>
-                        <td>{prod.paymentMode}</td>
+                        <td>{prod.payment}</td>
                         <td>{prod.amount} Rs/-</td>
                         <td>{prod.status}</td>
+                        <td>{new Date(prod.deliveryDate).toLocaleDateString('en-CA')}</td>
                       </tr>
                     ))
                   }

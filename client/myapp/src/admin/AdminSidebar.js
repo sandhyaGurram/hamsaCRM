@@ -11,7 +11,7 @@ const AdminSidebar = ({ show, setShowNav }) => {
     return (
 
         <div className={show ? 'sidenav active' : 'sidenav'}>
-            <h4>Sidebar</h4>
+            <h4>Navigation</h4>
             <ul>
                 <li>
                     <NavLink to='orderlist' onClick={handleNavClick}>Order List</NavLink>

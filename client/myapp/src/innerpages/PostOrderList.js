@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import innerStyles from './innerpages.module.css'
+import '../admin/Sidebar.css'
 
 const PostOrderList = () => {
     const [date, setdate] = useState('')
@@ -45,7 +46,7 @@ const PostOrderList = () => {
         <>
 
 
-            <section className='py-1'>
+            <section className='mobile py-1'>
                 <h2 className='text-center'>Post Order List</h2>
                 <div className='container'>
                     <div className='row'>

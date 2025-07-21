@@ -5,6 +5,8 @@ import $ from 'jquery';
 
 import 'datatables.net-dt/css/dataTables.dataTables.css';
 import 'datatables.net';
+import '../admin/Sidebar.css'
+import { NavLink } from 'react-router-dom';
 
 const FBAOrder = () => {
     const [data, setData] = useState([])
@@ -25,7 +27,7 @@ const FBAOrder = () => {
     }, [data]);
     return (
         <>
-            <section className='py-5'>
+            <section className='mobile py-5'>
                 <h2 className='text-center'>FBA Order List</h2>
                 <div className='container'>
                     <div className='row'>
@@ -42,6 +44,7 @@ const FBAOrder = () => {
                                             <th>PaymentMode</th>
                                             <th>Amount</th>
                                             <th>Status</th>
+                                            <th>Edit data</th>
 
                                         </tr>
                                     </thead>
@@ -58,6 +61,9 @@ const FBAOrder = () => {
                                                         <td>{prod.paymentMode}</td>
                                                         <td>{prod.amount}</td>
                                                         <td>{prod.status}</td>
+                                                        <td>
+                                                            <NavLink to={`/fbaedit/${prod._id}`}><button className='btn btn-danger' >edit</button></NavLink>
+                                                        </td>
 
 
                                                     </tr>

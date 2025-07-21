@@ -8,17 +8,9 @@ import AdminSidebar from './AdminSidebar'
 const AdminDashboard = () => {
     return (
         <>
-            <section className={innerStyles.breadc}>
-                <div className='container-fluid'>
-                    <div className='row'>
-                        <div className=''>
-                            <h4>Admin Dashboard</h4>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
-            <section className='py-1'>
+
+            <section className='mobile py-1'>
                 <div className='container-fluid'>
                     <div className='row'>
                         <div className=''>

@@ -5,6 +5,7 @@ import $ from 'jquery';
 
 import 'datatables.net-dt/css/dataTables.dataTables.css';
 import 'datatables.net';
+import '../admin/Sidebar.css'
 
 const Home = () => {
     const [data, setData] = useState([])
@@ -26,7 +27,7 @@ const Home = () => {
 
     return (
         <>
-            <section className='py-5'>
+            <section className='mobile py-5'>
                 <h2 className='text-center'>Products List</h2>
                 <div className='container'>
                     <div className='row'>

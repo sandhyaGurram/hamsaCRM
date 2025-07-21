@@ -21,5 +21,22 @@ AmezonSelfShipRouting.post('/amezonselfship', async (req, res) => {
     res.send(result)
 })
 
+AmezonSelfShipRouting.delete('/amezonselfship/:id', async (req, res) => {
+    const id1 = req.params.id;
+    let order = await AmezonSelfShip.deleteOne({ _id: id1 })
+    res.send(order)
+})
+
+AmezonSelfShipRouting.get("/amezonselfship/:id", async (req, res) => {
+    const id1 = req.params.id;
+    let order = await AmezonSelfShip.findOne({ _id: id1 });
+    res.send(order)
+})
+
+AmezonSelfShipRouting.put("/amezonselfship/:id", async (req, res) => {
+    const id1 = req.params.id;
+    let order = await AmezonSelfShip.updateOne({ _id: id1 }, { $set: req.body });
+    res.send(order)
+})
 
 module.exports = AmezonSelfShipRouting;

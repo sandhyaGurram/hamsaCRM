@@ -12,6 +12,7 @@ import WebOrderList from './innerpages/WebOrderList'
 import MyntraList from './innerpages/MyntraList'
 import FlipList from './innerpages/FlipList'
 import MyntraOrderList from './innerpages/MyntraOrderList'
+import FBAedit from './innerpages/Edit/FBAedit'
 
 const Routing = () => {
     return (
@@ -31,6 +32,8 @@ const Routing = () => {
                     <Route path='myntralist' element={<MyntraList />} />
                     <Route path='fliplist' element={<FlipList />} />
                     <Route path='myntraorderlist' element={<MyntraOrderList />} />
+                    <Route path='fbaedit/:id' element={<FBAedit />} />
+
 
 
                 </Route>

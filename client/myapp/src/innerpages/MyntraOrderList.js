@@ -4,6 +4,7 @@ import $ from 'jquery';
 import 'datatables.net-dt/css/dataTables.dataTables.css';
 import 'datatables.net';
 import axios from 'axios';
+import '../admin/Sidebar.css'
 
 const MyntraOrderList = () => {
     const [data, setData] = useState([]);
@@ -23,7 +24,7 @@ const MyntraOrderList = () => {
         }
     }, [data]);
     return (
-        <section className='py-5'>
+        <section className='mobile py-5'>
             <h2 className='text-center'>Myntra Order List</h2>
             <div className='container'>
                 <div className='row'>

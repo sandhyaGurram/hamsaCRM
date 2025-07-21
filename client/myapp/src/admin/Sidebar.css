@@ -41,6 +41,9 @@ header{
   height: 100%;
   padding: 10px 30px;
 }
+h4{
+  color:white;
+}
 .sidenav{
   width: 240px;
 position: absolute;
@@ -84,6 +87,11 @@ header svg{
   font-size: 40px;
 }
 
-@media screen {
-  
+@media (max-width: 768px){
+  table th{
+    font-size: 12px;
+  }
+  table td{
+    font-size: 11px;
+  }
 }

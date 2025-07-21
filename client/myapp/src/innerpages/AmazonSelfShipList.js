@@ -4,6 +4,8 @@ import $ from 'jquery';
 import 'datatables.net-dt/css/dataTables.dataTables.css';
 import 'datatables.net';
 import axios from 'axios';
+import '../admin/Sidebar.css'
+import { NavLink } from 'react-router-dom';
 
 const AmazonSelfShipList = () => {
     const [data, setData] = useState([]);
@@ -24,28 +26,29 @@ const AmazonSelfShipList = () => {
     }, [data]);
 
     return (
-        <section className='py-5'>
+        <section className='mobile py-5'>
             <h2 className='text-center'>Amazon Self Ship List</h2>
             <div className='container'>
                 <div className='row'>
                     <div className='col-md-12'>
                         <div className='table-responsive'>
                             <table id="myTable" className='table table-bordered display'>
-                                <thead>
+                                <thead className="text-center">
                                     <tr>
-                                        <th>Date</th>
+                                        <th className="text-center">Date</th>
                                         <th>Customer Name</th>
                                         <th>Location</th>
                                         <th>Phone Number</th>
                                         <th>OrderID</th>
-                                        <th>AWB</th>
-                                        <th>Products</th>
+                                        <th className="text-center">AWB</th>
+                                        <th className="text-center">Products</th>
                                         <th>PaymentMode</th>
                                         <th>Amount</th>
                                         <th>Status</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody className="text-center">
                                     {
                                         Array.isArray(data) && data.map((prod, index) => (
                                             <tr key={index}>
@@ -59,6 +62,9 @@ const AmazonSelfShipList = () => {
                                                 <td>{prod.paymentMode}</td>
                                                 <td>{prod.amount} Rs/-</td>
                                                 <td>{prod.status}</td>
+                                                <td>
+
+                                                </td>
                                             </tr>
                                         ))
                                     }
