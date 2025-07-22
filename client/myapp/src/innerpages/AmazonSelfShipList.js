@@ -63,7 +63,7 @@ const AmazonSelfShipList = () => {
                                                 <td>{prod.amount} Rs/-</td>
                                                 <td>{prod.status}</td>
                                                 <td>
-
+                                                    <NavLink to={`/amezonedit/:id`}>edit</NavLink>
                                                 </td>
                                             </tr>
                                         ))

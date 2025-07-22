@@ -21,7 +21,7 @@ const FBAOrder = () => {
     }, [])
 
     useEffect(() => {
-        if (data.length > 0) {
+        if (data.length > 0 && !$.fn.DataTable.isDataTable('#myTable')) {
             $('#myTable').DataTable();
         }
     }, [data]);
@@ -50,9 +50,9 @@ const FBAOrder = () => {
                                     </thead>
                                     <tbody>
                                         {
-                                            Array.isArray(data) && data.map((prod) => {
+                                            Array.isArray(data) && data.map((prod, index) => {
                                                 return (
-                                                    <tr>
+                                                    <tr key={prod._id || index}>
                                                         <td>{new Date(prod.date).toLocaleDateString('en-CA')}</td>
                                                         <td>{prod.customerName}</td>
                                                         <td>{prod.location}</td>

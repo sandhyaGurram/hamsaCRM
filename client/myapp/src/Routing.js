@@ -13,12 +13,17 @@ import MyntraList from './innerpages/MyntraList'
 import FlipList from './innerpages/FlipList'
 import MyntraOrderList from './innerpages/MyntraOrderList'
 import FBAedit from './innerpages/Edit/FBAedit'
+import AmezonEdit from './innerpages/Edit/AmezonEdit'
+import PostAmezon from './innerpages/PostAmezon'
 
 const Routing = () => {
     return (
         <div>
             <Routes>
                 <Route path='/' element={<Home />} />
+                <Route path='/fbaedit/:id' element={<FBAedit />} />
+                <Route path='/amezonedit/:id' element={<AmezonEdit />} />
+
                 {/* <Route path='/orderlist' element={<OrderList />} /> */}
                 <Route path='/' element={<AdminDashboard />} >
                     <Route path='orderlist' element={<OrderList />} />
@@ -32,7 +37,8 @@ const Routing = () => {
                     <Route path='myntralist' element={<MyntraList />} />
                     <Route path='fliplist' element={<FlipList />} />
                     <Route path='myntraorderlist' element={<MyntraOrderList />} />
-                    <Route path='fbaedit/:id' element={<FBAedit />} />
+                    <Route path='amezonorder' element={<PostAmezon />} />
+
 
 
 

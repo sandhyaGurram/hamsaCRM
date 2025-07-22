@@ -1,4 +1,5 @@
 import axios from 'axios'
+import Select from 'react-select';
 import React, { useState } from 'react'
 import innerStyles from './innerpages.module.css'
 import '../admin/Sidebar.css'
@@ -14,10 +15,21 @@ const PostEBAorders = () => {
     const [amount, setamount] = useState('')
     const [status, setstatus] = useState('')
 
+    const productOptions = [
+        { value: 'Glow Moisturizer', label: 'Glow Moisturizer' },
+        { value: 'Hair Growth Serum', label: 'Hair Growth Serum' },
+        { value: 'Vitamin C Face Wash', label: 'Vitamin C Face Wash' },
+        { value: 'Sunscreen SPF 50', label: 'Sunscreen SPF 50' },
+        { value: 'Collagen Cream', label: 'Collagen Cream' },
+    ];
+
+    const handleProductChange = (selectedOptions) => {
+        setproducts(selectedOptions);
+    };
 
     const FBAorderListData = (e) => {
         e.preventDefault();
-        axios.post('https://hamsa-backend-4rpv.onrender.com/fbalist', { date, customerName, location, orderID, products, paymentMode, amount, status })
+        axios.post('https://hamsa-backend-4rpv.onrender.com/fbalist', { date, customerName, location, orderID, products: products.map(p => p.value), paymentMode, amount, status })
             .then((res) => {
                 alert("data added success")
                 setdate('')
@@ -67,7 +79,16 @@ const PostEBAorders = () => {
                             </div>
 
                             <div className=''>
-                                <select
+                                <Select
+                                    isMulti
+                                    name="products"
+                                    options={productOptions}
+                                    className="mb-3"
+                                    classNamePrefix="select"
+                                    value={products}
+                                    onChange={handleProductChange}
+                                />
+                                {/* <select
                                     name='products'
                                     className='form-control mb-3'
                                     multiple
@@ -82,7 +103,7 @@ const PostEBAorders = () => {
                                             {product.name}
                                         </option>
                                     ))}
-                                </select>
+                                </select> */}
                             </div>
                             <div className=''>
                                 <select

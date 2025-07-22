@@ -1,19 +1,22 @@
 import axios from 'axios'
 import Select from 'react-select';
-import innerStyles from '../innerpages.module.css'
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState } from 'react'
+import innerStyles from './innerpages.module.css'
+import '../admin/Sidebar.css'
 
-const FBAedit = () => {
+const PostAmezon = () => {
     const [date, setdate] = useState('')
     const [customerName, setcustomerName] = useState('')
     const [location, setlocation] = useState('')
+    const [phoneNumber, setphoneNumber] = useState('')
+
     const [orderID, setorderID] = useState('')
+    const [awb, setawb] = useState('')
     const [products, setproducts] = useState([])
     const [paymentMode, setpaymentMode] = useState('')
     const [amount, setamount] = useState('')
     const [status, setstatus] = useState('')
-    let { id } = useParams();
+
 
     const productOptions = [
         { value: 'Glow Moisturizer', label: 'Glow Moisturizer' },
@@ -27,43 +30,25 @@ const FBAedit = () => {
         setproducts(selectedOptions);
     };
 
-    useEffect(() => {
-        axios.get(`https://hamsa-backend-4rpv.onrender.com/fbalist/${id}`)
+    const AmezonData = (e) => {
+        e.preventDefault();
+        axios.post('https://hamsa-backend-4rpv.onrender.com/fbalist', { date, customerName, location, orderID, products: products.map(p => p.value), paymentMode, amount, status })
             .then((res) => {
-                setdate(res.data.date.slice(0, 10));
-                setcustomerName(res.data.customerName)
-                setlocation(res.data.location)
-                setorderID(res.data.orderID)
-                // Map string array to {value, label}
-                const selectedProductOptions = res.data.products.map(productName => ({
-                    value: productName,
-                    label: productName
-                }));
-                setproducts(selectedProductOptions);
-                setpaymentMode(res.data.paymentMode)
-                setamount(res.data.amount)
-                setstatus(res.data.status)
-            })
-            .catch(err => console.log(err))
-    }, [])
-
-    const editFBA = (e) => {
-        e.preventDefault()
-        axios.put(`https://hamsa-backend-4rpv.onrender.com/fbalist/${id}`, { date, customerName, location, orderID, products: products.map(p => p.value), paymentMode, amount, status })
-            .then((res) => {
-                alert("edit success")
+                alert("data added success")
                 setdate('')
                 setcustomerName('')
                 setlocation('')
                 setorderID('')
 
-                setproducts([])
+                setproducts('')
                 setpaymentMode('')
                 setamount('')
                 setstatus('')
             })
             .catch(err => console.log(err))
+
     }
+
     const productList = [
         { name: 'Glow Moisturizer' },
         { name: 'Hair Growth Serum' },
@@ -71,14 +56,16 @@ const FBAedit = () => {
         { name: 'Sunscreen SPF 50' },
         { name: 'Collagen Cream' }
     ];
+
+
     return (
         <section className='mobile  py-1'>
-            <h2 className='text-center'>Edit FBA Order List</h2>
+            <h2 className='text-center'>Post Amezon Order List</h2>
             <div className='container-fluid'>
 
 
                 <div className='col-md-6 m-auto'>
-                    <form className={innerStyles.form} onSubmit={editFBA}>
+                    <form className={innerStyles.form} onSubmit={AmezonData}>
                         <div className=''>
                             <input type='date' name='date' placeholder='date' className='form-control mb-3' value={date} onChange={(e) => setdate(e.target.value)} />
                         </div>
@@ -89,7 +76,13 @@ const FBAedit = () => {
                             <input type='text' name='location' placeholder='location' className='form-control mb-3' value={location} onChange={(e) => setlocation(e.target.value)} />
                         </div>
                         <div className=''>
+                            <input type='number' name='phoneNumber' placeholder='phoneNumber' className='form-control mb-3' value={phoneNumber} onChange={(e) => setphoneNumber(e.target.value)} />
+                        </div>
+                        <div className=''>
                             <input type='text' name='orderID' placeholder='orderID' className='form-control mb-3' value={orderID} onChange={(e) => setorderID(e.target.value)} />
+                        </div>
+                        <div className=''>
+                            <input type='text' name='awb' placeholder='awb' className='form-control mb-3' value={awb} onChange={(e) => setawb(e.target.value)} />
                         </div>
 
                         <div className=''>
@@ -102,22 +95,7 @@ const FBAedit = () => {
                                 value={products}
                                 onChange={handleProductChange}
                             />
-                            {/* <select
-                                name='products'
-                                className='form-control mb-3'
-                                multiple
-                                value={products}
-                                onChange={(e) =>
-                                    setproducts(Array.from(e.target.selectedOptions, option => option.value))
-                                }
-                            >
-                                <option value='' disabled hidden>Select a product</option>
-                                {productList.map((product, index) => (
-                                    <option key={index} value={product.name}>
-                                        {product.name}
-                                    </option>
-                                ))}
-                            </select> */}
+
                         </div>
                         <div className=''>
                             <select
@@ -139,7 +117,7 @@ const FBAedit = () => {
                         </div>
 
                         <div className=''>
-                            <input type='submit' className='btn btn-success' value='update FBA order list' />
+                            <input type='submit' className='btn btn-success' value='Add FBA order list' />
                         </div>
                     </form>
                 </div>
@@ -149,4 +127,4 @@ const FBAedit = () => {
     )
 }
 
-export default FBAedit
+export default PostAmezon
