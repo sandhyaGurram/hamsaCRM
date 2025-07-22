@@ -29,6 +29,9 @@ const AdminSidebar = ({ show, setShowNav }) => {
                     <NavLink to='postfbaorderlist' onClick={handleNavClick}> Post FBA Orders</NavLink>
                 </li>
                 <li>
+                    <NavLink to='amezonorder' onClick={handleNavClick}> Post Amezon Orders</NavLink>
+                </li>
+                <li>
                     <NavLink to='amezonselfship' onClick={handleNavClick}> Amezon Selfship</NavLink>
                 </li>
                 <li>

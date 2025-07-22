@@ -32,14 +32,15 @@ const PostAmezon = () => {
 
     const AmezonData = (e) => {
         e.preventDefault();
-        axios.post('https://hamsa-backend-4rpv.onrender.com/fbalist', { date, customerName, location, orderID, products: products.map(p => p.value), paymentMode, amount, status })
+        axios.post('https://hamsa-backend-4rpv.onrender.com/amezonselfship', { date, customerName, location, phoneNumber, orderID, awb, products: products.map(p => p.value), paymentMode, amount, status })
             .then((res) => {
                 alert("data added success")
                 setdate('')
                 setcustomerName('')
                 setlocation('')
+                setphoneNumber('')
                 setorderID('')
-
+                setawb('')
                 setproducts('')
                 setpaymentMode('')
                 setamount('')
