@@ -57,7 +57,7 @@ const FBAOrder = () => {
                                                         <td>{prod.customerName}</td>
                                                         <td>{prod.location}</td>
                                                         <td>{prod.orderID}</td>
-                                                        <td>{prod.products}</td>
+                                                        <td>{Array.isArray(prod.products) ? prod.products.join(', ') : prod.products}</td>
                                                         <td>{prod.paymentMode}</td>
                                                         <td>{prod.amount}</td>
                                                         <td>{prod.status}</td>

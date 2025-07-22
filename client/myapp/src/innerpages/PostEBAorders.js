@@ -9,7 +9,7 @@ const PostEBAorders = () => {
     const [location, setlocation] = useState('')
     const [orderID, setorderID] = useState('')
 
-    const [products, setproducts] = useState('')
+    const [products, setproducts] = useState([])
     const [paymentMode, setpaymentMode] = useState('')
     const [amount, setamount] = useState('')
     const [status, setstatus] = useState('')
@@ -70,8 +70,11 @@ const PostEBAorders = () => {
                                 <select
                                     name='products'
                                     className='form-control mb-3'
+                                    multiple
                                     value={products}
-                                    onChange={(e) => setproducts(e.target.value)}
+                                    onChange={(e) =>
+                                        setproducts(Array.from(e.target.selectedOptions, option => option.value))
+                                    }
                                 >
                                     <option value='' disabled hidden>Select a product</option>
                                     {productList.map((product, index) => (

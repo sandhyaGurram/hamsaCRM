@@ -18,7 +18,7 @@ const FBAedit = () => {
     useEffect(() => {
         axios.get(`https://hamsa-backend-4rpv.onrender.com/fbalist/${id}`)
             .then((res) => {
-                setdate(res.data.date)
+                setdate(res.data.date.slice(0, 10));
                 setcustomerName(res.data.customerName)
                 setlocation(res.data.location)
                 setorderID(res.data.orderID)

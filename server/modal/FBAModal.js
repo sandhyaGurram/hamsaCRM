@@ -18,7 +18,7 @@ let FBASchema = new mongoose.Schema({
         required: true,
     },
     products: {
-        type: Array,
+        type: [String],
         required: true,
     },
     paymentMode: {
